@@ -9,7 +9,12 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
+  background-color: var(--primary-gray);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-dark);
+  border-radius: 2px;
 }
 
 header {
