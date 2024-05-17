@@ -14,13 +14,13 @@
     />
     <link rel="stylesheet" href="global.css" />
     <link href="styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="./css/buyModalStyles.css">
-    <link rel="stylesheet" href="./css/eventModalStyles.css">
-    <link rel="stylesheet" href="./css/modalStyles.css">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./css/buyModalStyles.css" />
+    <link rel="stylesheet" href="./css/eventModalStyles.css" />
+    <link rel="stylesheet" href="./css/modalStyles.css" />
   </head>
   <body>
-    <header>
+    <header id="navbar">
       <h4>UniFBVem</h4>
       <nav>
         <a>Atrações</a>
@@ -54,7 +54,10 @@
       </div>
 
       <div>
-        <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
+        <button
+          class="card add-new-event event-modal-trigger"
+          data-title="Anuncie aqui"
+        >
           <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
         </button>
       </div>
@@ -91,37 +94,37 @@
         </div>
       </div>
       <div id="rightContainer">
-      <div id="footerTitle">
-      <h4>Calourada Wyden</h4>
-      <p>Festa promovida pelo CIN da UniFBV</p>
-    </div>
-    
-      <button id="buttonFooter">Comprar ingresso</button>
-    </div>
+        <div id="footerTitle">
+          <h4>Calourada Wyden</h4>
+          <p>Festa promovida pelo CIN da UniFBV</p>
+        </div>
+        <button id="buttonFooter" class="buy-modal-trigger">
+          Comprar ingresso
+        </button>
+      </div>
     </footer>
-    <button class="buy-modal-trigger">Comprar ingresso</button>
 
     <!-- Buy modal -->
     <div id="buy-modal" class="modal">
       <div class="modal-content">
-        <header>
+        <header class="modal-title">
           <h3>Comprar ingresso - UniFBVem</h3>
           <div class="close-buy-modal close-modal">
             <i class="ph ph-x"></i>
           </div>
         </header>
-        
+
         <form class="modal-form buy-modal-form">
           <label class="name">
             <span>Nome Completo</span>
-            <input type="text" placeholder="Digite aqui...">
+            <input type="text" placeholder="Digite aqui..." />
           </label>
 
           <label class="email">
             <span>E-mail</span>
-            <input type="text" placeholder="Digite aqui...">
+            <input type="text" placeholder="Digite aqui..." />
           </label>
-          
+
           <label class="ticket-type">
             <span>Tipo de ingresso</span>
             <select name="ticket-type" id="ticket-type">
@@ -134,7 +137,7 @@
 
           <label class="ticket-price">
             <span>Valor do ingresso</span>
-            <input type="text" disabled id="ticket-price-input">
+            <input type="text" disabled id="ticket-price-input" />
           </label>
 
           <div class="actions">
@@ -155,27 +158,33 @@
             <i class="ph ph-x"></i>
           </div>
         </header>
-        
+
         <form class="modal-form event-modal-form">
           <label class="event-thumb">
             <span>Selecione a imagem do evento aqui</span>
             <span><i class="ph ph-image"></i></span>
-            <input type="file" accept="image/*" name="event-thumb" id="event-thumb-input" hidden>
+            <input
+              type="file"
+              accept="image/*"
+              name="event-thumb"
+              id="event-thumb-input"
+              hidden
+            />
           </label>
 
           <label class="event-name">
             <span>Nome do evento</span>
-            <input type="text" placeholder="Digite aqui...">
+            <input type="text" placeholder="Digite aqui..." />
           </label>
 
           <label class="event-date">
             <span>Quando vai ser o evento?</span>
-            <input type="date">
+            <input type="date" />
           </label>
 
           <label class="event-time">
             <span>Que horas será o evento?</span>
-            <input type="time">
+            <input type="time" />
           </label>
 
           <label class="event-address">
