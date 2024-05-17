@@ -1,0 +1,35 @@
+.event-modal-form {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 
+    "thumb thumb thumb thumb"
+    "name name name name"
+    "address address address time"
+    "address address address date"
+    "observations observations observations observations"
+    "observations observations observations observations"
+    "actions actions actions actions"
+  ;
+}
+
+.event-modal-form .event-thumb {
+  grid-area: thumb;
+}
+.event-modal-form .event-name {
+  grid-area: name;
+}
+.event-modal-form .event-date {
+  grid-area: date;
+}
+.event-modal-form .event-time {
+  grid-area: time;
+}
+.event-modal-form .event-address {
+  grid-area: address;
+}
+.event-modal-form .event-obs {
+  grid-area: observations;
+}
+.event-modal-form .actions {
+  grid-area: actions;
+}

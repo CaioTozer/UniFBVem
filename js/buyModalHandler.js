@@ -1,6 +1,6 @@
-const modal = document.getElementById("buy-modal");
-const modalTriggers = document.getElementsByClassName("buy-modal-trigger");
-const modalCloseBtn = document.getElementsByClassName("close-modal")[0];
+const buyModal = document.getElementById("buy-modal");
+const buyModalTriggers = document.getElementsByClassName("buy-modal-trigger");
+const buyModalCloseBtn = document.getElementsByClassName("close-buy-modal")[0];
 
 const ticketPriceInput = document.getElementById("ticket-price-input");
 const ticketTypeSelect = document.getElementById("ticket-type");
@@ -21,20 +21,19 @@ ticketTypeSelect.addEventListener('change', () => {
   ticketPriceInput.value = price ? formatter.format(price) : '';
 })
 
-for (trigger of modalTriggers) {
-  console.log(trigger)
+for (trigger of buyModalTriggers) {
   trigger.onclick = function() {
-    modal.style.display = "block";
+    buyModal.style.display = "block";
   }
 }
 
-modalCloseBtn.onclick = function() {
-  modal.style.display = "none";
+buyModalCloseBtn.onclick = function() {
+  buyModal.style.display = "none";
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == buyModal) {
+    buyModal.style.display = "none";
   }
 }
 
