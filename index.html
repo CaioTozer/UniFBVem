@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="global.css" />
     <link href="styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="./css/buyModalStyles.css">
@@ -37,13 +37,20 @@
         metropolitana do Recife!
       </p>
       <p>Escalando todos os garotos e garotas de "Programa" da região!</p>
-      <img alt="Party Image" src="./Assets/Image - Drag in to fill..png" id="Banner"/>
+      <img
+        alt="Party Image"
+        src="./Assets/Image - Drag in to fill..png"
+        id="Banner"
+      />
     </div>
 
     <main>
       <div class="main-header-wrapper">
         <h4>Próximos eventos</h4>
-        <p>Abaixo estão nossa seleção principal de eventos para você participar. NÃO PERCA TEMPO!</p>
+        <p>
+          Abaixo estão nossa seleção principal de eventos para você participar.
+          NÃO PERCA TEMPO!
+        </p>
       </div>
 
       <div>
@@ -52,29 +59,45 @@
         </button>
       </div>
     </main>
-
-    <h1>Sobre o Evento:</h1>
-    <!-- <h2>
+    <div id="infoContainer">
+      <div id="infoBox">
+        <div id="infoEvent">
+          <h2>Sobre o Evento:</h2>
+          <!-- <h2>
       Essa é pra você que até hoje espera ir em uma festa universitária igual as
       dos filmes, venha pra calourada de Computaria da Wyden!
     </h2> -->
-    <h3>Local: Em breve...</h3>
-    <h3>Horário: Em breve...</h3>
-    <h3>Bebidas: Em breve...</h3>
-    <h1>Atrações</h1>
-    <h3>Vintage Culture</h3>
-    <h3>Alok</h3>
-    <h3>Dj Arana</h3>
-    <h3>Dj João Pereira</h3>
+
+          <h3>Local: Em breve...</h3>
+          <h3>Horário: Em breve...</h3>
+          <h3>Bebidas: Em breve...</h3>
+        </div>
+        <div id="infoEvent">
+          <h2>Atrações</h2>
+          <h3 class="atraction">Vintage Culture</h3>
+          <h3 class="atraction">Alok</h3>
+          <h3 class="atraction">KVSH</h3>
+        </div>
+      </div>
+    </div>
     <footer>
+      <div id="devContainer">
+        <h4>Desenvolvedores:</h4>
+        <div id="devs">
+          <p>Caio Tozer</p>
+          <p>João Pedro Nascimento</p>
+          <p>Gabriel Noronha</p>
+          <p>João Vitor Albuquerque</p>
+        </div>
+      </div>
+      <div id="rightContainer">
+      <div id="footerTitle">
       <h4>Calourada Wyden</h4>
-      <img alt="Instagram" />
       <p>Festa promovida pelo CIN da UniFBV</p>
-      <h4>Desenvolvedores:</h4>
-      <p>Caio Tozer</p>
-      <p>João Pedro Nascimento</p>
-      <p>Gabriel Noronha</p>
-      <p>João Vitor Albuquerque</p>
+    </div>
+    
+      <button id="buttonFooter">Comprar ingresso</button>
+    </div>
     </footer>
     <button class="buy-modal-trigger">Comprar ingresso</button>
 
