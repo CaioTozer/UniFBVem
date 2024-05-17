@@ -6,6 +6,8 @@ body {
   --primary-gray: #a0a0a0;
   --primary-light-gray: #E7E7E7;
   --primary-light: #F0F0F0;
+  --danger: #e84118;
+  --success: #4cd137;
 }
 
 header {
@@ -53,4 +55,14 @@ nav {
     align-items: center;
     gap: 48px;
     width: 100%;
+}
+
+.danger-background {
+  background-color: var(--danger);
+  color: white;
+}
+
+.success-background {
+  background-color: var(--success);
+  color: white;
 }

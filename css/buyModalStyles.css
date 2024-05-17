@@ -1,0 +1,114 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: min(80%, 1024px); 
+}
+
+.modal-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-modal {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 
+    "name name name name"
+    "email email email email"
+    "ticket-type ticket-price ticket-price ticket-price"
+    "actions actions actions actions"
+  ;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.modal-form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.modal-form label span {
+  color: var(--primary-gray);
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.modal-form label input,
+.modal-form label select {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary-light-gray);
+  background-color: var(--primary-light);
+}
+
+.modal-form .actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-form .actions button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 0;
+  font-size: 0.75rem;
+
+  transition: filter 150ms;
+}
+
+.modal-form .actions button:hover {
+  filter: brightness(0.9);
+}
+
+.buy-modal-form .name {
+  grid-area: name;
+}
+.buy-modal-form .email {
+  grid-area: email;
+}
+.buy-modal-form .ticket-type {
+  grid-area: ticket-type;
+}
+.buy-modal-form .ticket-price {
+  grid-area: ticket-price;
+}
+.actions {
+  grid-area: actions
+}
