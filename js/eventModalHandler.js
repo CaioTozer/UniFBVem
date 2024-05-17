@@ -4,17 +4,11 @@ const eventModalCloseBtn = document.getElementsByClassName("close-event-modal")[
 
 for (trigger of eventModalTriggers) {
   trigger.onclick = function() {
-    eventModal.style.display = "block";
+    eventModal.style.display = "flex";
   }
 }
 
 eventModalCloseBtn.onclick = function() {
   eventModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == eventModal) {
-    eventModal.style.display = "none";
-  }
 }
 

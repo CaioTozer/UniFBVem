@@ -23,17 +23,11 @@ ticketTypeSelect.addEventListener('change', () => {
 
 for (trigger of buyModalTriggers) {
   trigger.onclick = function() {
-    buyModal.style.display = "block";
+    buyModal.style.display = "flex";
   }
 }
 
 buyModalCloseBtn.onclick = function() {
   buyModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == buyModal) {
-    buyModal.style.display = "none";
-  }
 }
 
