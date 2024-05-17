@@ -1,0 +1,27 @@
+.buy-modal-form .name {
+  grid-area: name;
+}
+.buy-modal-form .email {
+  grid-area: email;
+}
+.buy-modal-form .ticket-type {
+  grid-area: ticket-type;
+}
+.buy-modal-form .ticket-price {
+  grid-area: ticket-price;
+}
+
+.buy-modal-form {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 
+    "name name name name"
+    "email email email email"
+    "ticket-type ticket-price ticket-price ticket-price"
+    "actions actions actions actions"
+  ;
+}
+
+.buy-modal-form .actions {
+  grid-area: actions
+}

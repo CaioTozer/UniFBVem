@@ -4,8 +4,10 @@ body {
   --primary-darker: #030303;
   --primary-dark: #111111;
   --primary-gray: #a0a0a0;
-  --primary-light-gray: #e7e7e7;
-  --primary-light: #f0f0f0;
+  --primary-light-gray: #E7E7E7;
+  --primary-light: #F0F0F0;
+  --danger: #e84118;
+  --success: #4cd137;
 }
 
 body::-webkit-scrollbar {
@@ -55,6 +57,15 @@ nav {
   border-radius: 16px;
 }
 
+.danger-background {
+  background-color: var(--danger);
+  color: white;
+}
+
+.success-background {
+  background-color: var(--success);
+  color: white;
+}
 #firstPost {
   display: flex;
   flex-direction: column;

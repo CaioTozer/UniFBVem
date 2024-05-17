@@ -14,7 +14,10 @@
     />
     <link rel="stylesheet" href="global.css" />
     <link href="styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/buyModalStyles.css">
+    <link rel="stylesheet" href="./css/eventModalStyles.css">
+    <link rel="stylesheet" href="./css/modalStyles.css">
   </head>
   <body>
     <header>
@@ -23,7 +26,7 @@
         <a>Atrações</a>
         <a>Saiba Mais</a>
         <a>Anúnico</a>
-        <button class="checkout-button">Comprar</button>
+        <button class="checkout-button buy-modal-trigger">Comprar</button>
       </nav>
     </header>
 
@@ -51,7 +54,7 @@
       </div>
 
       <div>
-        <button class="card add-new-event" data-title="Anuncie aqui">
+        <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
           <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
         </button>
       </div>
@@ -96,5 +99,103 @@
       <button id="buttonFooter">Comprar ingresso</button>
     </div>
     </footer>
+    <button class="buy-modal-trigger">Comprar ingresso</button>
+
+    <!-- Buy modal -->
+    <div id="buy-modal" class="modal">
+      <div class="modal-content">
+        <header>
+          <h3>Comprar ingresso - UniFBVem</h3>
+          <div class="close-buy-modal close-modal">
+            <i class="ph ph-x"></i>
+          </div>
+        </header>
+        
+        <form class="modal-form buy-modal-form">
+          <label class="name">
+            <span>Nome Completo</span>
+            <input type="text" placeholder="Digite aqui...">
+          </label>
+
+          <label class="email">
+            <span>E-mail</span>
+            <input type="text" placeholder="Digite aqui...">
+          </label>
+          
+          <label class="ticket-type">
+            <span>Tipo de ingresso</span>
+            <select name="ticket-type" id="ticket-type">
+              <option value="">Selecione</option>
+              <option value="vip">VIP</option>
+              <option value="premium">Premium</option>
+              <option value="standart">Básico</option>
+            </select>
+          </label>
+
+          <label class="ticket-price">
+            <span>Valor do ingresso</span>
+            <input type="text" disabled id="ticket-price-input">
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="danger-background">Cancelar</button>
+            <button type="submit" class="success-background">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/buyModalHandler.js"></script>
+
+    <!-- Event modal -->
+    <div id="event-modal" class="modal">
+      <div class="modal-content">
+        <header>
+          <h3>Criar um novo evento</h3>
+          <div class="close-event-modal close-modal">
+            <i class="ph ph-x"></i>
+          </div>
+        </header>
+        
+        <form class="modal-form event-modal-form">
+          <label class="event-thumb">
+            <span>Selecione a imagem do evento aqui</span>
+            <span><i class="ph ph-image"></i></span>
+            <input type="file" accept="image/*" name="event-thumb" id="event-thumb-input" hidden>
+          </label>
+
+          <label class="event-name">
+            <span>Nome do evento</span>
+            <input type="text" placeholder="Digite aqui...">
+          </label>
+
+          <label class="event-date">
+            <span>Quando vai ser o evento?</span>
+            <input type="date">
+          </label>
+
+          <label class="event-time">
+            <span>Que horas será o evento?</span>
+            <input type="time">
+          </label>
+
+          <label class="event-address">
+            <span>Onde acontecerá o evento?</span>
+            <textarea type="text" placeholder="Digite aqui..."></textarea>
+          </label>
+
+          <label class="event-obs">
+            <span>Observações</span>
+            <textarea type="text" placeholder="Digite aqui..."></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="danger-background">Cancelar</button>
+            <button type="submit" class="success-background">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/eventModalHandler.js"></script>
+    <script src="./js/modals.js"></script>
   </body>
 </html>
