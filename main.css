@@ -58,5 +58,5 @@ main {
   border-radius: 8px;
   background-color: var(--primary-light-gray);
   height: 36rem;
-  min-width: 360px;
+  width: 360px;
 }

@@ -24,7 +24,7 @@
       <h4>UniFBVem</h4>
       <nav>
         <a>Atrações</a>
-        <a>Saiba Mais</a>
+        <a href="./more.html" target="_blank">Saiba Mais</a>
         <a>Anúnico</a>
         <button class="checkout-button buy-modal-trigger">Comprar</button>
       </nav>
@@ -52,8 +52,7 @@
           NÃO PERCA TEMPO!
         </p>
       </div>
-
-      <div>
+      <div id="events-container">
         <button
           class="card add-new-event event-modal-trigger"
           data-title="Anuncie aqui"
@@ -66,11 +65,6 @@
       <div id="infoBox">
         <div id="infoEvent">
           <h2>Sobre o Evento:</h2>
-          <!-- <h2>
-      Essa é pra você que até hoje espera ir em uma festa universitária igual as
-      dos filmes, venha pra calourada de Computaria da Wyden!
-    </h2> -->
-
           <h3>Local: Em breve...</h3>
           <h3>Horário: Em breve...</h3>
           <h3>Bebidas: Em breve...</h3>
@@ -174,7 +168,7 @@
 
           <label class="event-name">
             <span>Nome do evento</span>
-            <input type="text" placeholder="Digite aqui..." />
+            <input type="text" placeholder="Digite aqui..." id="input-title"/>
           </label>
 
           <label class="event-date">
@@ -206,5 +200,6 @@
     </div>
     <script src="./js/eventModalHandler.js"></script>
     <script src="./js/modals.js"></script>
+    <script src="./js/allEventsInfo.js"></script>
   </body>
 </html>
