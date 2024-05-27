@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./Assets/WydenLogo.jpeg" />
+    <link rel="icon" href="{{ url_for('static', filename='images/WydenLogo.jpeg') }}" />
     <title>UniFBVem</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,19 +12,20 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="global.css" />
-    <link href="styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="./css/buyModalStyles.css" />
-    <link rel="stylesheet" href="./css/eventModalStyles.css" />
-    <link rel="stylesheet" href="./css/modalStyles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buyModalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eventModalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eventCards.css') }}">
   </head>
   <body>
-    <header id="navbar">
+    <header>
       <h4>UniFBVem</h4>
       <nav>
         <a>Atrações</a>
-        <a href="./more.html" target="_blank">Saiba Mais</a>
+        <a href="./more" target="_blank">Saiba Mais</a>
         <a>Anúnico</a>
         <button class="checkout-button buy-modal-trigger">Comprar</button>
       </nav>
@@ -39,7 +40,7 @@
       <p>Escalando todos os garotos e garotas de "Programa" da região!</p>
       <img
         alt="Party Image"
-        src="./Assets/Image - Drag in to fill..png"
+        src="{{ url_for('static', filename='images/Image - Drag in to fill..png') }}""
         id="Banner"
       />
     </div>
@@ -52,11 +53,9 @@
           NÃO PERCA TEMPO!
         </p>
       </div>
+
       <div id="events-container">
-        <button
-          class="card add-new-event event-modal-trigger"
-          data-title="Anuncie aqui"
-        >
+        <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
           <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
         </button>
       </div>
@@ -65,6 +64,7 @@
       <div id="infoBox">
         <div id="infoEvent">
           <h2>Sobre o Evento:</h2>
+
           <h3>Local: Em breve...</h3>
           <h3>Horário: Em breve...</h3>
           <h3>Bebidas: Em breve...</h3>
@@ -88,37 +88,35 @@
         </div>
       </div>
       <div id="rightContainer">
-        <div id="footerTitle">
-          <h4>Calourada Wyden</h4>
-          <p>Festa promovida pelo CIN da UniFBV</p>
-        </div>
-        <button id="buttonFooter" class="buy-modal-trigger">
-          Comprar ingresso
-        </button>
-      </div>
+      <div id="footerTitle">
+      <h4>Calourada Wyden</h4>
+      <p>Festa promovida pelo CIN da UniFBV</p>
+    </div>
+    
+    <button class="buy-modal-trigger" id="buttonFooter">Comprar ingresso</button>
     </footer>
 
     <!-- Buy modal -->
     <div id="buy-modal" class="modal">
       <div class="modal-content">
-        <header class="modal-title">
+        <header>
           <h3>Comprar ingresso - UniFBVem</h3>
           <div class="close-buy-modal close-modal">
             <i class="ph ph-x"></i>
           </div>
         </header>
-
+        
         <form class="modal-form buy-modal-form">
           <label class="name">
             <span>Nome Completo</span>
-            <input type="text" placeholder="Digite aqui..." />
+            <input type="text" placeholder="Digite aqui...">
           </label>
 
           <label class="email">
             <span>E-mail</span>
-            <input type="text" placeholder="Digite aqui..." />
+            <input type="text" placeholder="Digite aqui...">
           </label>
-
+          
           <label class="ticket-type">
             <span>Tipo de ingresso</span>
             <select name="ticket-type" id="ticket-type">
@@ -131,7 +129,7 @@
 
           <label class="ticket-price">
             <span>Valor do ingresso</span>
-            <input type="text" disabled id="ticket-price-input" />
+            <input type="text" disabled id="ticket-price-input">
           </label>
 
           <div class="actions">
@@ -141,7 +139,7 @@
         </form>
       </div>
     </div>
-    <script src="./js/buyModalHandler.js"></script>
+    <script src="{{ url_for('static', filename='js/buyModalHandler.js') }}"></script>
 
     <!-- Event modal -->
     <div id="event-modal" class="modal">
@@ -152,33 +150,27 @@
             <i class="ph ph-x"></i>
           </div>
         </header>
-
+        
         <form class="modal-form event-modal-form">
           <label class="event-thumb">
             <span>Selecione a imagem do evento aqui</span>
             <span><i class="ph ph-image"></i></span>
-            <input
-              type="file"
-              accept="image/*"
-              name="event-thumb"
-              id="event-thumb-input"
-              hidden
-            />
+            <input type="file" accept="image/*" name="event-thumb" id="event-thumb-input" hidden>
           </label>
 
           <label class="event-name">
             <span>Nome do evento</span>
-            <input type="text" placeholder="Digite aqui..." id="input-title"/>
+            <input type="text" placeholder="Digite aqui..." id="input-title">
           </label>
 
           <label class="event-date">
             <span>Quando vai ser o evento?</span>
-            <input type="date" />
+            <input type="date">
           </label>
 
           <label class="event-time">
             <span>Que horas será o evento?</span>
-            <input type="time" />
+            <input type="time">
           </label>
 
           <label class="event-address">
@@ -198,8 +190,8 @@
         </form>
       </div>
     </div>
-    <script src="./js/eventModalHandler.js"></script>
-    <script src="./js/modals.js"></script>
-    <script src="./js/allEventsInfo.js"></script>
+    <script src="{{ url_for('static', filename='js/eventModalHandler.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modals.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/allEventsInfo.js') }}"></script>
   </body>
 </html>
