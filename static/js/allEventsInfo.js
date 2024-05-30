@@ -3,24 +3,24 @@ const events = [
     image: "../Assets/Palestra T.i.png",
     title: "Palestra semana da T.I",
     local: "Local: Auditório do mestrado",
-    time: "Horário: 19:00",
-    day: "Dia: 12/06/2024",
+    time: "19:00",
+    day: "2024-02-01",
     obs: "Obs: Palestra para aresentação da área, sobre seus benefícios, desvantagens e desafios para concientização dos alunos.",
   },
   {
     image: "path/to/image1.jpg",
     title: "Evento 1",
     local: "Local 1",
-    time: "12:00 PM",
-    day: "01/01/2024",
+    time: "12:00",
+    day: "2024-02-01",
     obs: "Observações do Evento 1",
   },
   {
     image: "path/to/image2.jpg",
     title: "Evento 2",
     local: "Local 2",
-    time: "2:00 PM",
-    day: "02/01/2024",
+    time: "15:00",
+    day: "2024-02-01",
     obs: "Observações do Evento 2",
   },
 ];
@@ -32,10 +32,22 @@ function renderEvents(events) {
     const eventDiv = document.createElement("div");
     eventDiv.classList.add("event-modal-trigger");
     eventDiv.classList.add("event");
+    const inputTitle = document.getElementById('input-title')
+    const inputDate = document.getElementById('input-date')
+    const inputTime = document.getElementById('input-time')
+    const inputPlace = document.getElementById('input-place')
+    const inputDescription = document.getElementById('input-description')
 
     eventDiv.onclick = function () {
       eventModal.style.display = "flex";
-    };
+      inputTitle.value = event.title
+      inputDescription.value = event.obs
+      inputPlace.value = event.local
+      inputTime.value = event.time
+      inputDate.value = event.day
+
+      
+    }; 
 
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("image-container-event");

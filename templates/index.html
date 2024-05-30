@@ -58,6 +58,21 @@
         <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
           <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
         </button>
+
+        <!-- Componente rendenrizado para cada evento -->
+        
+        <!-- <div class="event event-modal-trigger">
+          <div class="image-container-event">
+            <img class="event-image"/>
+          </div>
+          <div class="event-info-container">
+              <p class="event-title">Título</p>
+              <p class="info-event">Local</p>
+              <p class="info-event">Horario</p>
+              <p class="info-event">Dia</p>
+              <p class="captions">Observação</p>
+          </div>
+        </div> -->
       </div>
     </main>
     <div id="infoContainer">
@@ -165,22 +180,22 @@
 
           <label class="event-date">
             <span>Quando vai ser o evento?</span>
-            <input type="date">
+            <input type="date" id="input-date">
           </label>
 
           <label class="event-time">
             <span>Que horas será o evento?</span>
-            <input type="time">
+            <input type="time" id="input-time">
           </label>
 
           <label class="event-address">
             <span>Onde acontecerá o evento?</span>
-            <textarea type="text" placeholder="Digite aqui..."></textarea>
+            <textarea type="text" placeholder="Digite aqui..." id="input-place"></textarea>
           </label>
 
           <label class="event-obs">
             <span>Observações</span>
-            <textarea type="text" placeholder="Digite aqui..."></textarea>
+            <textarea type="text" placeholder="Digite aqui..." id="input-description"></textarea>
           </label>
 
           <div class="actions">
