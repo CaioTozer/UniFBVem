@@ -19,10 +19,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 2px;
 }
 
-header {
+#header {
   display: flex;
   justify-content: space-between;
   padding: 16px;
+  padding-inline: 32px;
   position: fixed;
   width: 100%;
   z-index: 6;
@@ -31,7 +32,7 @@ header {
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   cursor: pointer;
 }
