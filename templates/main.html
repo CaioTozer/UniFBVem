@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="firstPost">
+  <h1>Atenção! Todos os servidores foram derrubados</h1>
+  <p>
+    O sistema caiu para anunciar a maior calourada tech da região
+    metropolitana do Recife!
+  </p>
+  <p>Escalando todos os garotos e garotas de "Programa" da região!</p>
+  <img
+    alt="Party Image"
+    src="{{ url_for('static', filename='images/Image - Drag in to fill..png') }}""
+    id="Banner"
+  />
+</div>
+<main>
+  <div class="main-header-wrapper">
+    <h4>Próximos eventos</h4>
+    <p>
+      Abaixo estão nossa seleção principal de eventos para você participar.
+      NÃO PERCA TEMPO!
+    </p>
+  </div>
+
+  <div id="events-container">
+    <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
+      <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
+    </button>
+    {% for event in events %}
+      <div class="event event-modal-trigger">
+        <div class="image-container-event">
+          <img class="event-image" src="{{event.imageUrl}}"/>
+        </div>
+        <div class="event-info-container">
+          <p class="event-title">{{event.title}}</p>
+          <p class="info-event">{{event.local}}</p>
+          <p class="info-event">{{event.date.strftime('%H:%M')}}</p>
+          <p class="info-event">{{event.date.strftime('%d/%m/%Y')}}</p>
+          <p class="captions">{{event.obs}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</main>
+<div id="infoContainer">
+  <div id="infoBox">
+    <div id="infoEvent">
+      <h2>Sobre o Evento:</h2>
+
+      <h3>Local: Em breve...</h3>
+      <h3>Horário: Em breve...</h3>
+      <h3>Bebidas: Em breve...</h3>
+    </div>
+    <div id="infoEvent">
+      <h2>Atrações</h2>
+      <h3 class="atraction">Vintage Culture</h3>
+      <h3 class="atraction">Alok</h3>
+      <h3 class="atraction">KVSH</h3>
+    </div>
+  </div>
+</div>
+{% endblock %}

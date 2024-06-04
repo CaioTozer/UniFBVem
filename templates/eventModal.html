@@ -1,0 +1,50 @@
+<!-- Event modal -->
+<div id="event-modal" class="modal">
+  <div class="modal-content">
+    <header>
+      <h3>Criar um novo evento</h3>
+      <div class="close-event-modal close-modal">
+        <i class="ph ph-x"></i>
+      </div>
+    </header>
+    
+    <form class="modal-form event-modal-form" action="/events" method="post">
+      <label class="event-thumb">
+        <span>Selecione a imagem do evento aqui</span>
+        <span><i class="ph ph-image"></i></span>
+        <input type="file" accept="image/*" name="event-thumb" id="event-thumb-input" hidden>
+      </label>
+
+      <label class="event-name">
+        <span>Nome do evento</span>
+        <input name="event-name" type="text" placeholder="Digite aqui..." id="input-title">
+      </label>
+
+      <label class="event-date">
+        <span>Quando vai ser o evento?</span>
+        <input type="date" name="event-date">
+      </label>
+
+      <label class="event-time">
+        <span>Que horas será o evento?</span>
+        <input type="time" name="event-time">
+      </label>
+
+      <label class="event-address">
+        <span>Onde acontecerá o evento?</span>
+        <textarea type="text" placeholder="Digite aqui..." name="event-address"></textarea>
+      </label>
+
+      <label class="event-obs">
+        <span>Observações</span>
+        <textarea type="text" placeholder="Digite aqui..." name="event-obs"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="button" class="danger-background close-event-modal">Cancelar</button>
+        <button type="submit" class="success-background">Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/eventModalHandler.js') }}"></script>

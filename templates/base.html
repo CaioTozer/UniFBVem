@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ url_for('static', filename='images/WydenLogo.jpeg') }}" />
+    <title>UniFBVem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buyModalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eventModalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eventCards.css') }}">
+  </head>
+  <body>
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+
+    {% include 'buyEventModal.html' %}
+    {% include 'eventModal.html' %}
+    <script src="{{ url_for('static', filename='js/modals.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/allEventsInfo.js') }}"></script>
+  </body>
+</html>

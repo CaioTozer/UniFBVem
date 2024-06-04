@@ -1,0 +1,49 @@
+<!-- Buy modal -->
+<div id="buy-modal" class="modal">
+  <div class="modal-content">
+    <header>
+      <h3>Comprar ingresso - UniFBVem</h3>
+      <div class="close-buy-modal close-modal">
+        <i class="ph ph-x"></i>
+      </div>
+    </header>
+    
+    <form class="modal-form buy-modal-form" action="/" method="post">
+      <label class="name">
+        <span>Nome Completo</span>
+        <input type="text" placeholder="Digite aqui..." name="name">
+      </label>
+
+      <label class="email">
+        <span>E-mail</span>
+        <input type="text" placeholder="Digite aqui..." name="email">
+      </label>
+      
+      <label class="ticket-type">
+        <span>Tipo de ingresso</span>
+        <select id="ticket-type">
+          <option value="">Selecione</option>
+          <option value="vip">VIP</option>
+          <option value="premium">Premium</option>
+          <option value="standart">Básico</option>
+        </select>
+      </label>
+
+      <label class="ticket-price">
+        <span>Valor do ingresso</span>
+        <input
+          type="text"
+          readonly
+          id="ticket-price-input"
+          name="ticket-price"
+        >
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="danger-background">Cancelar</button>
+        <button type="submit" class="success-background">Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/buyModalHandler.js') }}"></script>

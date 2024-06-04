@@ -2,13 +2,13 @@ const eventModal = document.getElementById("event-modal");
 const eventModalTriggers = document.getElementsByClassName(
   "event-modal-trigger"
 );
-const eventModalCloseBtn =
-  document.getElementsByClassName("close-event-modal")[0];
-const inputTitle = document.getElementById("input-title");
-const inputDate = document.getElementById("input-date");
-const inputTime = document.getElementById("input-time");
-const inputPlace = document.getElementById("input-place");
-const inputDescription = document.getElementById("input-description");
+const eventModalCloseTriggers =
+  document.getElementsByClassName("close-event-modal");
+const inputTitle = document.getElementsByName("event-name")[0];
+const inputDate = document.getElementsByName("event-date")[0];
+const inputTime = document.getElementsByName("event-time")[0];
+const inputPlace = document.getElementsByName("event-address")[0];
+const inputDescription = document.getElementsByName("event-obs")[0];
 
 for (trigger of eventModalTriggers) {
   trigger.onclick = function () {
@@ -16,11 +16,13 @@ for (trigger of eventModalTriggers) {
   };
 }
 
-eventModalCloseBtn.onclick = function () {
-  eventModal.style.display = "none";
-  inputTitle.value = "";
-  inputDescription.value = "";
-  inputPlace.value = "";
-  inputTime.value = "";
-  inputDate.value = "";
-};
+for (closeTrigger of eventModalCloseTriggers) {
+  closeTrigger.onclick = function () {
+    eventModal.style.display = "none";
+    inputTitle.value = "";
+    inputDescription.value = "";
+    inputPlace.value = "";
+    inputTime.value = "";
+    inputDate.value = "";
+  };
+}
