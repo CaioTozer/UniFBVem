@@ -23,6 +23,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 16px;
+  position: fixed;
+  width: 100%;
+  z-index: 6;
+  background-color: var(--primary-light);
 }
 
 nav {
@@ -74,6 +78,7 @@ nav {
   gap: 48px;
   width: 100%;
   margin-bottom: 48px;
+  padding-top: 120px;
 }
 
 #infoEvent {
