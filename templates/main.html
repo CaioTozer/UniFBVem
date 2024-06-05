@@ -1,16 +1,14 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div id="firstPost">
   <h1>Atenção! Todos os servidores foram derrubados</h1>
   <p>
-    O sistema caiu para anunciar a maior calourada tech da região
-    metropolitana do Recife!
+    O sistema caiu para anunciar a maior calourada tech da região metropolitana
+    do Recife!
   </p>
   <p>Escalando todos os garotos e garotas de "Programa" da região!</p>
   <img
     alt="Party Image"
-    src="{{ url_for('static', filename='images/Image - Drag in to fill..png') }}""
+    src="{{ url_for('static', filename='images/Image - Drag in to fill..png') }}"
     id="Banner"
   />
 </div>
@@ -18,28 +16,32 @@
   <div class="main-header-wrapper" id="allEventsContainer">
     <h4>Próximos eventos</h4>
     <p>
-      Abaixo estão nossa seleção principal de eventos para você participar.
-      NÃO PERCA TEMPO!
+      Abaixo estão nossa seleção principal de eventos para você participar. NÃO
+      PERCA TEMPO!
     </p>
   </div>
 
   <div id="events-container">
-    <button class="card add-new-event event-modal-trigger" data-title="Anuncie aqui">
+    <button
+      class="card add-new-event event-modal-trigger"
+      data-title="Anuncie aqui"
+    >
       <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
     </button>
     {% for event in events %}
-      <div class="event event-modal-trigger">
-        <div class="image-container-event">
-          <img class="event-image" src="{{event.imageUrl}}"/>
-        </div>
-        <div class="event-info-container">
-          <p class="event-title">{{event.title}}</p>
-          <p class="info-event">{{event.local}}</p>
-          <p class="info-event">{{event.time}}</p>
-          <p class="info-event">{{event.date}}</p>
-          <p class="captions">{{event.obs}}</p>
-        </div>
+    <div class="event event-modal-trigger">
+      <i class="ph-thin ph-trash trashIcon"></i>
+      <div class="image-container-event" id="image-container-event">
+        <i class="ph-thin ph-image imageDefault"></i>
       </div>
+      <div class="event-info-container">
+        <p class="event-title">{{event.title}}</p>
+        <p class="info-event">{{event.local}}</p>
+        <p class="info-event">{{event.time}}</p>
+        <p class="info-event">{{event.date}}</p>
+        <p class="captions">{{event.obs}}</p>
+      </div>
+    </div>
     {% endfor %}
   </div>
 </main>

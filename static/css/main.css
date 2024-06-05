@@ -38,6 +38,20 @@ main {
   color: var(--primary-gray);
 }
 
+.imageDefault::before {
+  font-size: 6rem;
+  color: var(--primary-light-gray);
+}
+
+.trashIcon::before {
+  font-size: 1.5rem;
+  color: var(--danger);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 4;
+}
+
 .card::before {
   content: attr(data-title);
   position: absolute;
