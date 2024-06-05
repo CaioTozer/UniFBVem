@@ -1,11 +1,18 @@
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Saiba Mais</title>
-      <link rel="icon" href="{{ url_for('static', filename='images/WydenLogo.jpeg') }}" />
-  </head>
-  <body>
+{% extends 'base.html' %}
 
-  </body>
-</html>
+{% block content %}
+    <h1 id="titulo">Alunos responsáveis pelo site:</h1>
+     
+    <div id="people_container">
+    <section class="section_name"><h2 id="nome">João Vitor Albuquerque</h2>
+    <p>Me chamo João Vitor, atualmente estou cursando 2° período de Ciência da Computação.E estudando SQL e Python.</p></section>
+
+    <section class="section_name"><h2 id="nome">Gabriel Noronha</h2>
+    <p>Olá, sou Gabriel Noronha, um desenvolvedor Web apaixonado por tecnologia e apredizado contínuo. Cursando o 2° período de Ciência da Computação.</p></section>
+
+    <section class="section_name"><h2 id="nome">Caio Tozer</h2>
+    <p>Meu nome é Caio Tozer,sou desenvolvedor Web Full Stack.Atualmente no 2°período de Ciência da Computação na Wyden
+   <section class="section_name"> <h2 id="nome">João Pedro</h2>
+    <p>Meu nome é João Pedro, atualmente estou cursando Ciência da Computação e focado em Desenv Web.</p> </section>
+</div>
+{% endblock %}
