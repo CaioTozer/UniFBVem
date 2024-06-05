@@ -13,6 +13,7 @@
   background-color: var(--primary-light-gray);
   border-radius: 8px;
   cursor: pointer;
+  position: relative;
 }
 
 .image-container-event {
@@ -20,6 +21,7 @@
   height: 45%;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow-y: hidden;
   border-radius: 8px 8px 0px 0px;
   background-color: var(--primary-gray);
