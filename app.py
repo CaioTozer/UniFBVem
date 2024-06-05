@@ -8,20 +8,37 @@ eventsManager = EventManager()
 def root():
   return render_template('main.html', events=eventsManager.list_events())
 
-@app.route("/events", methods=["POST"])
+@app.route("/events", methods=["POST", "PUT", "DELETE"])
 def create_event():
-  body = request.form.to_dict()
+  body = request.json
+  
+  print(body)
+  
+  if request.method == "DELETE":
+    eventsManager.remove_event(body['title'])
+    return redirect(url_for('root'))
   
   event = Event(
-    imageUrl=body['event-thumb'],
-    title=body['event-name'],
-    obs=body['event-obs'],
-    time=body['event-time'],
-    date=body['event-date'],
-    local=body['event-address']
+    imageUrl='',
+    title=body['name'],
+    obs=body['description'],
+    time=body['time'],
+    date=body['date'],
+    local=body['address']
   )
   
-  eventsManager.add_event(event)
+  if request.method == "POST":
+    eventsManager.add_event(event)
+  elif request.method == "PUT":
+    eventsManager.update_event(event)
+  
+  return redirect(url_for('root'))
+
+@app.route("/send-buy-mail", methods=["POST"])
+def sendBuyEmail():
+  body = request.form.to_dict()
+  
+  print(f"Sending email to {body['name']}({body['email']}) buying a ticket with value {body['ticket-price']}")
   
   return redirect(url_for('root'))
 

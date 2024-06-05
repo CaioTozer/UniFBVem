@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.event > div {
+  height: 100%;
+}
+
 .image-container-event {
   width: 100%;
   height: 45%;

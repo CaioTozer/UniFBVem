@@ -22,27 +22,29 @@
   </div>
 
   <div id="events-container">
-    <button
-      class="card add-new-event event-modal-trigger"
-      data-title="Anuncie aqui"
-    >
+    <button class="card add-new-event" data-title="Anuncie aqui" onclick="handleOpenEventModal()">
       <i class="ph-thin ph-plus-circle add-new-event-icon"></i>
     </button>
     {% for event in events %}
-    <div class="event event-modal-trigger">
-      <i class="ph-thin ph-trash trashIcon"></i>
-      <div class="image-container-event" id="image-container-event">
-        <i class="ph-thin ph-image imageDefault"></i>
-      </div>
-      <div class="event-info-container">
-        <p class="event-title">{{event.title}}</p>
-        <p class="info-event">{{event.local}}</p>
-        <p class="info-event">{{event.time}}</p>
-        <p class="info-event">{{event.date}}</p>
-        <p class="captions">{{event.obs}}</p>
-      </div>
+      <div class="event">
+        <button class="delete-event-button trashIcon" onclick="handleDeleteEvent({{ loop.index0 }})"><i class="ph-thin ph-trash"></i></button>
+        <div onclick="handleOpenEventModal({{ loop.index0 }})">
+          <div class="image-container-event">
+            <i class="ph-thin ph-image imageDefault"></i>
+          </div>
+          <div class="event-info-container">
+            <p class="event-title">{{event.title}}</p>
+            <p class="info-event">{{event.local}}</p>
+            <p class="info-event">{{event.time}}</p>
+            <p class="info-event">{{event.date}}</p>
+            <p class="captions">{{event.obs}}</p>
+          </div>
+        </div>
     </div>
     {% endfor %}
+    <script>
+      const events = {{ events | tojson }};
+    </script>
   </div>
 </main>
 <div id="infoContainer">
